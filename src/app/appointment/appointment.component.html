@@ -1,0 +1,66 @@
+<div class="container">
+  <h2 class="text-danger-emphasis pb-2">Appointments List</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Appointment Type</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Note</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.appointmentType }}</td>
+      <td>{{ appointment.date }}</td>
+      <td>{{ appointment.time }}</td>
+      <td>{{ appointment.address }}</td>
+      <td>{{ appointment.phone }}</td>
+      <td>{{ appointment.note }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="openUpdateForm(appointment)">Update</button>
+        &nbsp;
+        <button (click)="deleteAppointment(appointment.id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="container" *ngIf="isUpdateMode && selectedAppointment">
+  <h2 class="text-primary">Update Appointment</h2>
+  <form [formGroup]="appointmentForm" (submit)="updateAppointment(selectedAppointment.id)">
+    <div class="form-group">
+      <label for="appointmentType">Appointment Type</label>
+      <input type="text" class="form-control" id="appointmentType" formControlName="appointmentType">
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" id="date" formControlName="date">
+    </div>
+    <div class="form-group">
+      <label for="time">Time</label>
+      <input type="time" class="form-control" id="time" formControlName="time">
+    </div>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" class="form-control" id="address" formControlName="address">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" class="form-control" id="phone" formControlName="phone">
+    </div>
+    <div class="form-group">
+      <label for="note">Note</label>
+      <textarea class="form-control" id="note" formControlName="note"></textarea>
+    </div>
+    <div class="mt-3">
+      <button type="submit" class="btn btn-success">Save Update</button>
+      &nbsp;
+      <button type="button" class="btn btn-secondary ml-2" (click)="cancelUpdate()">Cancel</button>
+    </div>
+  </form>
+</div>

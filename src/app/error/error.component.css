@@ -1,0 +1,32 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this as needed */
+}
+
+.error-box {
+  background-color: yellow;
+  padding: 20px;
+  text-align: center;
+}
+
+.flash-red {
+  animation: flash 1s infinite;
+  color: red;
+}
+
+.red-text {
+  color: red;
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+    font-size: 30px;
+    opacity: 1;
+  }
+  25%, 75% {
+    font-size: 35px;
+    opacity: 0.5;
+  }
+}

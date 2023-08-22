@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Reviews</h2>
+  <div *ngFor="let review of reviwes" class="card mb-3">
+    <div class="card-header">
+      <h5 class="card-title">{{ review.name }}</h5>
+      <small class="text-muted">{{ review.dateAndTime }}</small>
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ review.text }}</p>
+    </div>
+    <div class="card-footer">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">{{ review.likeCount }} Likes</button>
+        <button type="button" class="btn btn-danger">{{ review.dislikeCount }} Dislikes</button>
+      </div>
+    </div>
+  </div>
+</div>

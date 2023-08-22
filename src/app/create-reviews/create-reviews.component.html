@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Create a Review</h2>
+  <form [formGroup]="createReviewsFrom" (ngSubmit)="submitFrom()">
+    <!-- Review Text -->
+    <div class="form-group">
+      <label for="text">Review Text:</label>
+      <textarea id="text" class="form-control" rows="4" formControlName="text" required></textarea>
+    </div>
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" class="form-control" formControlName="name" required>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-control" formControlName="email" required>
+    </div>
+
+    <!-- Timestamp (display-only) -->
+<!--    <div class="form-group">-->
+<!--      <label for="dateAndTime" >Date and Time:</label>-->
+<!--      <input-->
+<!--        type="text"-->
+<!--        id="dateAndTime"-->
+<!--        class="form-control"-->
+<!--        [value]="timestamp"-->
+<!--        name="dateAndTime"-->
+<!--        disabled-->
+<!--      />-->
+<!--    </div>-->
+
+    <!-- Like Count (using thumbs-up icon) -->
+    <div class="form-group">
+      <label for="likeCount">Like Count:</label>
+      <div class="rating-icons">
+        <span class="fa fa-thumbs-up" (click)="incrementLikeCount()"></span>
+      </div>
+    </div>
+
+    <!-- Dislike Count (using thumbs-down icon) -->
+    <div class="form-group">
+      <label for="dislikeCount">Dislike Count:</label>
+      <div class="rating-icons">
+        <span class="fa fa-thumbs-down" (click)="incrementDislikeCount()"></span>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+  </form>
+</div>

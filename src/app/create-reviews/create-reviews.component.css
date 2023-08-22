@@ -1,0 +1,12 @@
+.rating-icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.rating-icons span {
+  cursor: pointer;
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* You can customize the color, size, and other styles as per your requirements */
