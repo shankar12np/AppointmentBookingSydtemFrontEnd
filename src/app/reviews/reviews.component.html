@@ -1,5 +1,6 @@
 <div class="container">
   <h2>Reviews</h2>
+  <!-- Inside your ReviewsComponent HTML -->
   <div *ngFor="let review of reviwes" class="card mb-3">
     <div class="card-header">
       <h5 class="card-title">{{ review.name }}</h5>
@@ -8,11 +9,14 @@
     <div class="card-body">
       <p class="card-text">{{ review.text }}</p>
     </div>
-    <div class="card-footer">
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">{{ review.likeCount }} Likes</button>
-        <button type="button" class="btn btn-danger">{{ review.dislikeCount }} Dislikes</button>
-      </div>
-    </div>
+<!--    <div class="card-footer">-->
+<!--      <div class="btn-group">-->
+<!--&lt;!&ndash;        <button type="button" class="btn btn-primary">{{ review.likeCount }} </button>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="button" class="btn btn-danger">{{ review.dislikeCount }} Dislikes</button>&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <!-- Include the like-count component to display the like count -->
+    <app-like-count [likeCount]="review.likeCount"></app-like-count>
   </div>
 </div>

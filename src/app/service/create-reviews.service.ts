@@ -34,7 +34,11 @@ baseUrl : string = 'http://localhost:8080/reviews';
     return this.Http.get<number>(this.baseUrl + '/' + reviewId + '/count');
   }
 
-  // dislikeReview(id) {
-  //
-  // }
+
+  // Method to increment the dislike count for a review
+  dislikeReview(reviewId: number): Observable<any> {
+    const url = this.baseUrl + '/' + reviewId + '/dislike';
+    return this.Http.post(url, null, { responseType: 'text' });
+  }
+
 }

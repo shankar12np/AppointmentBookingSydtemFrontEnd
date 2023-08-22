@@ -29,12 +29,23 @@ reviwes: any [] = [];
       review.likeCount++;
     });
   }
-  //
-  // dislikeReview(review: any) {
-  //   // Call the service method to increment the dislike count on the server
-  //   this.reviewsService.dislikeReview(review.id).subscribe(() => {
-  //     // Update the local review object's dislikeCount
-  //     review.dislikeCount++;
-  //   });
-  // }
+
+  dislikeReview(review: any) {
+    // Call the service method to increment the dislike count on the server
+    this.reviewsService.dislikeReview(review.id).subscribe(() => {
+      // Update the local review object's dislikeCount
+      review.dislikeCount++;
+    });
+  }
+
+
+  getReviewCount(reviewId: number){
+    this.reviewsService.getReviewCount(reviewId).subscribe((count) =>{
+     //update local review object's reviewCount
+      const review = this.reviwes.find((r) =>r.id === reviewId);
+      if (review) {
+        review.reviewCount = count;
+      }
+    })
+  }
 }
