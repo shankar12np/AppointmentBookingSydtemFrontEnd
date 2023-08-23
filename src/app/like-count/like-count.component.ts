@@ -9,7 +9,7 @@ export class LikeCountComponent {
   // Input property to receive the initial like count
   @Input() likeCount: number = 0;
 
-  // Method to increment the like count
+  // Method to increment the like count UI only ! backend needs works !
   incrementLikeCount() {
     this.likeCount++;
   }
