@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CreateReviewsService} from "../service/create-reviews.service";
 
 @Component({
   selector: 'app-like-count',
@@ -8,15 +9,29 @@ import {Component, Input, OnInit} from '@angular/core';
 export class LikeCountComponent {
   // Input property to receive the initial like count
   @Input() likeCount: number = 0;
+  @Input() dislikeCount: number = 0;
+  @Input() reviewId!: number;
 
+  constructor(public reviewsService : CreateReviewsService) {
+  }
   // Method to increment the like count
   incrementLikeCount() {
+    if (this.reviewId) {
+      this.reviewsService.likeReview(this.reviewId).subscribe(() => {
+        this.likeCount++;
+      });
+    }
     this.likeCount++;
   }
 
   // Method to decrement the like count
   decrementLikeCount() {
-    this.likeCount--;
+    if (this.reviewId) {
+      this.reviewsService.dislikeReview(this.reviewId).subscribe(() => {
+        this.dislikeCount++;
+      });
+    }
+     this.likeCount--;
   }
 
 }

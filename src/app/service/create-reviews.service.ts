@@ -26,6 +26,7 @@ baseUrl : string = 'http://localhost:8080/reviews';
 
   // Add a function to like a review by ID
   likeReview(reviewId: number): Observable<any> {
+    console.log("Like Method Called !")
     return this.Http.post<any>(this.baseUrl + '/' + reviewId + '/like', {});
   }
 
@@ -37,6 +38,7 @@ baseUrl : string = 'http://localhost:8080/reviews';
 
   // Method to increment the dislike count for a review
   dislikeReview(reviewId: number): Observable<any> {
+    console.log("Dislike method called!")
     const url = this.baseUrl + '/' + reviewId + '/dislike';
     return this.Http.post(url, null, { responseType: 'text' });
   }

@@ -23,6 +23,7 @@ reviwes: any [] = [];
       });
   }
   likeReview(review: any) {
+    console.log("Like++ called !")
     // Call the service method to increment the like count on the server
     this.reviewsService.likeReview(review.id).subscribe(() => {
       // Update the local review object's likeCount
@@ -31,6 +32,7 @@ reviwes: any [] = [];
   }
 
   dislikeReview(review: any) {
+    console.log("Dislike++ called ! ")
     // Call the service method to increment the dislike count on the server
     this.reviewsService.dislikeReview(review.id).subscribe(() => {
       // Update the local review object's dislikeCount
