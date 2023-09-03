@@ -10,6 +10,7 @@ import {CreateAppointmentComponent} from "./create-appointment/create-appointmen
 import {RegistrationComponent} from "./registration/registration.component";
 import {CreateReviewsComponent} from "./create-reviews/create-reviews.component";
 import {ReviewsComponent} from "./reviews/reviews.component";
+import {PasswordResetRequestComponent} from "./password-reset-request/password-reset-request.component";
 
 const routes: Routes = [
   {path: '', component:LoginComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'register', component:RegistrationComponent},
   {path: 'create-reviews', component:CreateReviewsComponent},
   {path: 'get-reviews', component:ReviewsComponent},
+  {path: 'password-reset-request', component:PasswordResetRequestComponent},
   {path: '**', component:ErrorComponent}
 
 ];

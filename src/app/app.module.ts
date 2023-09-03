@@ -19,7 +19,6 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
 import { RegistrationComponent } from './registration/registration.component';
 import { UserValidationRequestComponent } from './user-validation-request/user-validation-request.component';
 import { PasswordResetRequestComponent } from './password-reset-request/password-reset-request.component';
-import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { CreateReviewsComponent } from './create-reviews/create-reviews.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { LikeCountComponent } from './like-count/like-count.component';
@@ -39,7 +38,6 @@ import { LikeCountComponent } from './like-count/like-count.component';
     RegistrationComponent,
     UserValidationRequestComponent,
     PasswordResetRequestComponent,
-    PasswordResetComponent,
     CreateReviewsComponent,
     ReviewsComponent,
     LikeCountComponent,

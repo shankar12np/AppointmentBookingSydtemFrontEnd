@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light ms-xl-auto d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh;">
+<div class="container-fluid bg-light ms-xl-auto d-flex flex-column align-items-center justify-content-center" style="min-height: 88vh;">
   <div class="bg-warning container caption-top p-4">
     <div class="bg-light p-2 text-center mb-5">
       <h4 class="my-custom-font">Welcome to the Appointment Management Login Page</h4>
@@ -23,8 +23,10 @@
         <div class="mt-3">
           <button *ngIf="!basicAuthenticationService.isUserLoggedIn()" type="submit" class="btn btn-success">Login</button>
           &nbsp;
-          <button *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="btn btn-outline-primary" routerLink="/forgotPassword">Forgot Password</button>
+          <!-- Inside your existing form -->
+          <button *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="btn btn-outline-primary" routerLink="/password-reset-request">Forgot Password</button>
           &nbsp;
+
           <button *ngIf="!basicAuthenticationService.isUserLoggedIn()" class="btn btn-outline-primary" routerLink="/register">Register</button>
           <button *ngIf="basicAuthenticationService.isUserLoggedIn()" class="btn btn-outline-primary" (click)="logout()">Logout</button>
         </div>

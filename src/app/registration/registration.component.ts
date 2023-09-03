@@ -13,6 +13,7 @@ export class RegistrationComponent {
   email: string = '';
   firstName: string = '';
   lastName: string = '';
+  phoneNumber: string = '';
   registrationSuccess: boolean = false;
   errorMessage: string = '';
   successMessage: string = '';
@@ -27,7 +28,8 @@ export class RegistrationComponent {
       password: this.password,
       email: this.email,
       firstName: this.firstName,
-      lastName: this.lastName
+      lastName: this.lastName,
+      phoneNumber: this.phoneNumber
     };
 
     this.appointmentService.register(newUser).subscribe(
